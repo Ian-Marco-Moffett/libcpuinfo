@@ -24,7 +24,6 @@
 
 
 #include <string.h>
-#include <stdint.h>
 #include <vendors.h>
 
 
@@ -40,9 +39,13 @@ static inline void cpuid(uint32_t leaf, uint32_t* eax, uint32_t* ebx, uint32_t* 
 }
 
 
+#define CPUID(leaf) \
+	cpuid(leaf, &eax, &ebx, &ecx, &edx);
+
+
 static char* get_vendor_string(void)
 {
-	cpuid(0, &eax, &ebx, &ecx, &edx);
+	CPUID(0);
 
 	// An array to store vendor string.
 	// String is stored in EBX, ECX, and EDX.
@@ -141,4 +144,11 @@ char* get_vendor(void)
     {
         return "UNKNOWN";
     }
+}
+
+
+uint32_t get_stepping_id(void)
+{
+	CPUID(1);
+	return eax & 0xF;
 }

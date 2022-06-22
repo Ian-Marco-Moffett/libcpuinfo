@@ -26,8 +26,10 @@
 #ifndef CPUINFO_H
 #define CPUINFO_H
 
+#include <stdint.h>
+
 
 char* get_vendor(void);
-
+uint32_t get_stepping_id(void);
 
 #endif
