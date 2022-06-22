@@ -29,7 +29,15 @@
 #include <stdint.h>
 
 
+/*
+ *  CPU vendor (i.e intel).
+ */
 char* get_vendor(void);
+
+/*
+ * Fetches CPU 
+ * stepping ID.
+ */
 uint32_t get_stepping_id(void);
 
 #endif
