@@ -92,4 +92,6 @@ bool cpu_has_feature_ecx(CPU_FEATURE_ECX feat);
 // Counts how many thermal control circuits there is.
 uint8_t cpu_get_n_tcc_count(void);
 
+uint8_t cpu_get_model_number(void);
+
 #endif

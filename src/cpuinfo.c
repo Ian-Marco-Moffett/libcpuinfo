@@ -178,3 +178,10 @@ uint8_t cpu_get_n_tcc_count(void)
 
     return tcc_count;
 }
+
+
+uint8_t cpu_get_model_number(void)
+{
+    CPUID(1);
+    return (eax >> 4) & 0x7;
+}
