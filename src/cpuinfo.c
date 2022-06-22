@@ -82,69 +82,69 @@ char* cpu_get_vendor(void)
 	char* vendor_str = get_vendor_string();
 
 	if (strcmp(vendor_str, CPUID_VENDOR_AMD) == 0)
-    {
-        return "AMD";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_INTEL) == 0)
-    {
-        return "INTEL";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_VIA) == 0)
-    {
-        return "VIA";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_TRANSMETA) == 0)
-    {
-        return "TRANSMETA";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_CYRIX) == 0)
-    {
-        return "CYRIX";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_CENTAUR) == 0)
-    {
-        return "CENTUAR";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_NEXGEN) == 0)
-    {
-        return "NEXTGEN";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_UMC) == 0)
-    {
-        return "UMC";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_SIS) == 0)
-    {
-        return "SIS";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_RISE) == 0)
-    {
-        return "RISE";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_VORTEX) == 0)
-    {
-        return "VORTEX";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_AO486) == 0)
-    {
-        return "AO486";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_ZHAOXIN) == 0)
-    {
-        return "ZHAOXIN";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_HYGON) == 0)
-    {
-        return "HYGON";
-    }
-    else if (strcmp(vendor_str, CPUID_VENDOR_ELBRUS) == 0)
-    {
-        return "ELBRUS";
-    }
-    else
-    {
-        return "UNKNOWN";
-    }
+	{
+		return "AMD";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_INTEL) == 0)
+	{
+		return "INTEL";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_VIA) == 0)
+	{
+		return "VIA";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_TRANSMETA) == 0)
+	{
+		return "TRANSMETA";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_CYRIX) == 0)
+	{
+		return "CYRIX";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_CENTAUR) == 0)
+	{
+		return "CENTUAR";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_NEXGEN) == 0)
+	{
+		return "NEXTGEN";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_UMC) == 0)
+	{
+		return "UMC";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_SIS) == 0)
+	{
+		return "SIS";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_RISE) == 0)
+	{
+		return "RISE";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_VORTEX) == 0)
+	{
+		return "VORTEX";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_AO486) == 0)
+	{
+		return "AO486";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_ZHAOXIN) == 0)
+	{
+		return "ZHAOXIN";
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_HYGON) == 0)
+	{
+		return "HYGON";	
+	}
+	else if (strcmp(vendor_str, CPUID_VENDOR_ELBRUS) == 0)
+	{
+		return "ELBRUS";
+	}
+	else
+	{
+		return "UNKNOWN";
+	}
 }
 
 
