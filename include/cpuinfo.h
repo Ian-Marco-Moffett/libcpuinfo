@@ -51,8 +51,6 @@ typedef enum
 	CPU_PAT 		= 	(1 << 16), 			// Page attribute table.
 	CPU_PSE36 		= 	(1 << 17), 			// 36-bit page size extension.
 	CPU_PSN 		= 	(1 << 18), 			// Processor serial number present and enabled.
-	CPU_CLFLUSH 	= 	(1 << 19), 			// CLFLUSH instruction.
-	CPU_DEBUG_STORE =	(1 << 21),			// DS.
 	CPU_ACPI		=	(1 << 22), 			// ACPI.
 	CPU_MMX 		= 	(1 << 23), 			// MMX.
 	CPU_FXSR		= 	(1 << 24), 			// FXSAVE and FXSTOR instructions.
