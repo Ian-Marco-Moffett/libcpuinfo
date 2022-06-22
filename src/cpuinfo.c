@@ -77,7 +77,7 @@ static char* get_vendor_string(void)
 }
 
 
-char* get_vendor(void)
+char* cpu_get_vendor(void)
 {
 	char* vendor_str = get_vendor_string();
 
@@ -148,8 +148,8 @@ char* get_vendor(void)
 }
 
 
-uint32_t get_stepping_id(void)
+bool cpu_has_feature(CPU_FEATURE feat)
 {
 	CPUID(1);
-	return eax & 0xF;
+	return edx & feat;
 }

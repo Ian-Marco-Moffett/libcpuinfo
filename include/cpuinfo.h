@@ -27,17 +27,43 @@
 #define CPUINFO_H
 
 #include <stdint.h>
+#include <stdbool.h>
+
+
+// Feature bits reported in CPUID[EDX].
+typedef enum
+{
+	CPU_FPU			= 	(1 << 0),			// Floating point unit.
+	CPU_VME 		= 	(1 << 1), 			// Virtual mode exntension.
+	CPU_DE 			= 	(1 << 2), 			// Debugging extension.
+	CPU_PSE 		= 	(1 << 3),			// Page size extension.
+	CPU_TSC 		= 	(1 << 4), 			// Time Stamp Counter.
+	CPU_MSR 		= 	(1 << 5),			// Model specific registers.
+	CPU_PAE 		= 	(1 << 6),			// Physical address extension.
+	CPU_MSE 		= 	(1 << 7), 			// Machine check exception.
+	CPU_CX8 		= 	(1 << 8), 			// CMPXCHG8 instruction.
+	CPU_APIC 		= 	(1 << 9), 			// APIC.
+	CPU_SEP 		= 	(1 << 11), 			// Fast system call.
+	CPU_MTRR 		= 	(1 << 12), 			// Memory type range registers.
+	CPU_PGE 		= 	(1 << 13),			// Page global enable.
+	CPU_MCA 		= 	(1 << 14),			// Machine check architecture.
+	CPU_CMOV		=	(1 << 15),			// Conditional move instruction.
+	CPU_PAT 		= 	(1 << 16), 			// Page attribute table.
+	CPU_PSE36 		= 	(1 << 17), 			// 36-bit page size extension.
+	CPU_PSN 		= 	(1 << 18), 			// Processor serial number present and enabled.
+	CPU_CLFLUSH 	= 	(1 << 19), 			// CLFLUSH instruction.
+	CPU_DEBUG_STORE =	(1 << 21),			// DS.
+	CPU_ACPI		=	(1 << 22), 			// ACPI.
+	CPU_MMX 		= 	(1 << 23), 			// MMX.
+	CPU_FXSR		= 	(1 << 24), 			// FXSAVE and FXSTOR instructions.
+	CPU_SSE 		= 	(1 << 25), 			// Streaming SMID extensions.
+} CPU_FEATURE;
 
 
 /*
  *  CPU vendor (i.e intel).
  */
-char* get_vendor(void);
-
-/*
- * Fetches CPU 
- * stepping ID.
- */
-uint32_t get_stepping_id(void);
+char* cpu_get_vendor(void);
+bool cpu_has_feature(CPU_FEATURE feat);
 
 #endif
