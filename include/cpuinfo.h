@@ -63,10 +63,30 @@ typedef enum
 } CPU_FEATURE;
 
 
+// CPU feature flags from CPUID[ECX].
+// Got tired of aligning the text lol.
+typedef enum {
+	CPU_SSE3 = (1 << 0),		// Streaming SIMD extensions 3.
+	CPU_PCLMULDQ = (1 << 1),	// PCMULDQ instruction.
+	CPU_DTES64 = (1 << 2),		// 64-Bit Debug Store.
+	CPU_MONITOR = (1 << 3),	// MONITOR/MWAIT instructions.
+	CPU_DSCPL = (1 << 4),	// CPL Qualified Debug Store.
+	CPU_VMX	= (1 << 5),	// Virtual machine extensions.
+	CPU_SMX	= (1 << 6),	// Safer mode extensions.
+	CPU_EST = (1 << 7),	// Enhanced Intel SpeedStep(R) technology.
+	CPU_TM2 = (1 << 8),	// Terminal monitor 2.
+} CPU_FEATURE_ECX;
+
+
 /*
  *  CPU vendor (i.e intel).
  */
 char* cpu_get_vendor(void);
+
+// For CPUID:1[EDX]
 bool cpu_has_feature(CPU_FEATURE feat);
+
+// For CPUID:1[ECX] (basically just more features).
+bool cpu_has_feature_ecx(CPU_FEATURE_ECX feat);
 
 #endif

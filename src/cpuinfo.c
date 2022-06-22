@@ -153,3 +153,10 @@ bool cpu_has_feature(CPU_FEATURE feat)
 	CPUID(1);
 	return edx & feat;
 }
+
+
+bool cpu_has_feature_ecx(CPU_FEATURE_ECX feat)
+{
+	CPUID(1);
+	return ecx & feat;
+}
