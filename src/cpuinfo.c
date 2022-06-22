@@ -160,3 +160,21 @@ bool cpu_has_feature_ecx(CPU_FEATURE_ECX feat)
 	CPUID(1);
 	return ecx & feat;
 }
+
+
+uint8_t cpu_get_n_tcc_count(void) 
+{
+    uint8_t tcc_count = 0;
+
+    if (cpu_has_feature(CPU_TM))
+    {
+        ++tcc_count;
+    }
+
+    if (cpu_has_feature_ecx(CPU_TM2))
+    {
+        ++tcc_count;
+    }
+
+    return tcc_count;
+}
