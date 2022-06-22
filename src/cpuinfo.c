@@ -180,8 +180,18 @@ uint8_t cpu_get_n_tcc_count(void)
 }
 
 
+/*
+ * 
+ *   M = (ExtendedModel << 4) + Model
+ *   M = (CPUID(1).EAX[19:16] << 4) + CPUID(1).EAX[7:4].
+ *
+ */
+
 uint8_t cpu_get_model_number(void)
 {
     CPUID(1);
-    return (eax >> 3) & 0xF;
+    uint32_t extended_model = (eax >> 16) & 0x7FFFF;                // Shift by 16 and AND by 20 bits (20-16).
+    uint32_t m = (eax >> 4) & 0xF;                                  // Shift by 4 and AND by 4 bits (8-4).
+    uint32_t model_number = (extended_model << 4) + m;
+    return model_number;
 }
