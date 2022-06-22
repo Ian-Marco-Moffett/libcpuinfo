@@ -25,6 +25,7 @@
 
 #include <string.h>
 #include <vendors.h>
+#include <cpuinfo.h>
 
 
 static uint32_t eax, ebx, ecx, edx;
