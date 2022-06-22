@@ -54,8 +54,8 @@ typedef enum
 	CPU_ACPI		=	(1 << 22), 			// ACPI.
 	CPU_MMX 		= 	(1 << 23), 			// MMX.
 	CPU_FXSR		= 	(1 << 24), 			// FXSAVE and FXSTOR instructions.
-	CPU_SSE 		= 	(1 << 25), 			// Streaming SMID extensions.
-	CPU_SSE2 		= 	(1 << 26), 			// Streaming SIMD extensions.
+	CPU_SSE 		= 	(1 << 25), 			// Streaming SIMD extensions.
+	CPU_SSE2 		= 	(1 << 26), 			// Streaming SIMD extensions 2.
 	CPU_SS			=	(1 << 27), 			// Self snoop.
 	CPU_HTT			=	(1 << 28),			// Multi-threading.
 	CPU_TM			=	(1 << 29),			// Thermal monitor.
