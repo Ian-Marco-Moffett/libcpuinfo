@@ -195,3 +195,17 @@ uint8_t cpu_get_model_number(void)
     uint32_t model_number = (extended_model << 4) + m;
     return model_number;
 }
+
+
+/*
+ *  F = ExtendedFamily + Family
+ *  F = CPUID(1).EAX[27:20] + CPUID(1).EAX[11:8]
+ */
+uint32_t cpu_get_family_value(void)
+{
+    CPUID(1);
+    uint32_t extended_family = (eax >> 20) & 0xFF;
+    uint32_t family_code = (eax >> 8) & 0x1F;
+
+    return extended_family + family_code;
+}
